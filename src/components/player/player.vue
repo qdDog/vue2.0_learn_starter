@@ -8,7 +8,8 @@ const transform = prefixStyle('transform')
 export default {
   data() {
     return {
-      songReady: false
+      songReady: false,
+			currentTime: 0
     }
   },
   computed: {
@@ -134,6 +135,16 @@ export default {
     error() {
       this.songReady = true
     },
+		updateTime(e) {
+			console.log("updateTime", e.target)
+			this.currentTime = e.target.currentTime;
+		},
+		format(interval) {
+			interval = interval | 0;
+			const minutes = interval / 60 | 0;
+			const second = interval % 60;
+			return `${minutes}:${second}`;
+		},
     ...mapMutations({
       setFullScreen: SET_FULL_SCREEN,
       setPlaying: SET_PLAYING_STATE,
@@ -152,7 +163,10 @@ export default {
         newPlaying ? audio.play() : audio.pause()
       })
     },
-  }
+  },
+	created() {
+		console.log(this.currentSong)
+	}
 }
 </script>
 
@@ -194,16 +208,16 @@ export default {
           </div>
         </div>
         <div class="bottom">
-          <div class="dot-wrapper">
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
+<!--          <div class="dot-wrapper">-->
+<!--            <span class="dot"></span>-->
+<!--            <span class="dot"></span>-->
+<!--          </div>-->
           <div class="progress-wrapper">
-            <span class="time time-l"></span>
+            <span class="time time-l">{{format(currentTime)}}</span>
             <div class="progress-bar-wrapper">
               <!--            <progress-bar :percent="percent" @percentChange="onProgressBarChange"></progress-bar>-->
             </div>
-            <span class="time time-r"></span>
+            <span class="time time-r">{{format(currentSong.duration)}}</span>
           </div>
           <div class="operators">
             <div class="icon i-left">
@@ -250,9 +264,9 @@ export default {
     <audio
       @canplay="ready"
       @error="error"
+			@timeupdate="updateTime"
       :src="currentSong.url"
-      ref="audio"
-    ></audio>
+      ref="audio"></audio>
   </div>
 </template>
 

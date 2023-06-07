@@ -18,7 +18,7 @@ export function createSong(musicData) {
     album: musicData.title,
     singer_name: musicData.singer_name,
     title: musicData.title,
-    duration: 180,
+    duration: musicData.duration || 180,
     image: musicData.pic,
     url:
       musicData.url ||

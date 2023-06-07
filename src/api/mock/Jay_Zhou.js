@@ -24,7 +24,8 @@ export default {
         singer_id: 4558,
         singer_name: "周杰伦",
         singer_mid: "0025NhlN2yWrP4",
-        url: music1
+        url: music1,
+        duration: 216
       },
       {
         index: 2,
