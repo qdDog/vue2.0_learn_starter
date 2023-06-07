@@ -3,13 +3,20 @@ import {mapGetters, mapMutations} from 'vuex';
 import {SET_FULL_SCREEN, SET_PLAYING_STATE, SET_CURRENT_INDEX} from '../../store/mutations-types';
 import animations from 'create-keyframe-animation'
 import {prefixStyle} from '../../common/js/dom';
+import progressBar from '../../base/progress-bar/progress-bar.vue';
+import progressCircle from '../../base/progress-circle/progress-circle.vue';
 
 const transform = prefixStyle('transform')
 export default {
+  components: {
+    progressBar,
+    progressCircle
+  },
   data() {
     return {
       songReady: false,
-			currentTime: 0
+			currentTime: 0,
+      radius: 32
     }
   },
   computed: {
@@ -24,6 +31,9 @@ export default {
     },
     disabledCls() {
       return this.songReady ? '' : 'disable'
+    },
+    percent() {
+      return this.currentTime / this.currentSong.duration
     },
     ...mapGetters([
       "fullScreen",
@@ -136,15 +146,28 @@ export default {
       this.songReady = true
     },
 		updateTime(e) {
-			console.log("updateTime", e.target)
 			this.currentTime = e.target.currentTime;
 		},
 		format(interval) {
 			interval = interval | 0;
 			const minutes = interval / 60 | 0;
-			const second = interval % 60;
+			const second = this._pad(interval) % 60;
 			return `${minutes}:${second}`;
 		},
+    _pad(num, n = 2) {
+      let len = num.toString().length;
+      while (len < n) {
+        num = "0" + num
+        len++
+      }
+      return num
+    },
+    opProgressBarChange(percent) {
+      this.$refs.audio.currentTime = this.currentSong.duration  * percent;
+      if (!this.playing) {
+        this.togglePlaying()
+      }
+    },
     ...mapMutations({
       setFullScreen: SET_FULL_SCREEN,
       setPlaying: SET_PLAYING_STATE,
@@ -208,16 +231,19 @@ export default {
           </div>
         </div>
         <div class="bottom">
-<!--          <div class="dot-wrapper">-->
-<!--            <span class="dot"></span>-->
-<!--            <span class="dot"></span>-->
-<!--          </div>-->
+          <!--          <div class="dot-wrapper">-->
+          <!--            <span class="dot"></span>-->
+          <!--            <span class="dot"></span>-->
+          <!--          </div>-->
           <div class="progress-wrapper">
-            <span class="time time-l">{{format(currentTime)}}</span>
+            <span class="time time-l">{{ format(currentTime) }}</span>
             <div class="progress-bar-wrapper">
-              <!--            <progress-bar :percent="percent" @percentChange="onProgressBarChange"></progress-bar>-->
+              <progress-bar
+                :percent="percent"
+                @percentChange="opProgressBarChange"
+              ></progress-bar>
             </div>
-            <span class="time time-r">{{format(currentSong.duration)}}</span>
+            <span class="time time-r">{{ format(currentSong.duration) }}</span>
           </div>
           <div class="operators">
             <div class="icon i-left">
@@ -253,8 +279,14 @@ export default {
           <h2 class="name" v-html="currentSong.title"></h2>
           <p class="desc" v-html="currentSong.singer_name"></p>
         </div>
-        <div class="control" @click.stop="togglePlaying">
-          <i :class="miniIcon"></i>
+        <div class="control">
+          <progress-circle :radius="radius" :percent="percent">
+            <i
+              @click.stop="togglePlaying"
+              class="icon-mini"
+              :class="miniIcon"
+            ></i>
+          </progress-circle>
         </div>
         <div class="control">
           <i class="icon-playlist"></i>
@@ -264,9 +296,10 @@ export default {
     <audio
       @canplay="ready"
       @error="error"
-			@timeupdate="updateTime"
+      @timeupdate="updateTime"
       :src="currentSong.url"
-      ref="audio"></audio>
+      ref="audio"
+    ></audio>
   </div>
 </template>
 
@@ -457,7 +490,7 @@ export default {
     align-items: center
     position: fixed
     left: 0
-    bottom: 0
+    bottom: 38px
     z-index: 180
     width: 100%
     height: 60px
