@@ -4,10 +4,12 @@ import {SET_SINGER} from '../../store/mutations-types';
 import {getSingerList} from '../../api/singer';
 import {ERR_OK} from '../../api/config';
 import Listview from '../../base/listview/index.vue';
+import { playListMixin } from '../../common/js/mixin';
 
 const HOT_NAME = "热门"
 const HOT_MAXLENGTH = 10
 export default {
+  mixins: [playListMixin],
   components: {
     Listview
   },
@@ -80,6 +82,11 @@ export default {
         path: `/singer/${singer.id}`
       });
     },
+    handlePlaylist(playlist) {
+      const bottom = playlist.length  > 0 ? '60px' : 0;
+      this.$refs.singer.style.bottom = bottom;
+      this.$refs.list.refresh();
+    },
     ...mapMutations({
       setSinger: SET_SINGER
     })
@@ -91,8 +98,8 @@ export default {
 </script>
 
 <template>
-  <div class="singer">
-    <listview @select="selectSinger" :data="singerList"></listview>
+  <div class="singer" ref="singer">
+    <listview @select="selectSinger" :data="singerList" ref="list"></listview>
     <router-view></router-view>
   </div>
 </template>

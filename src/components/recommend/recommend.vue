@@ -4,7 +4,10 @@ import { getRecommend, getDiscList } from "../../api/recommend";
 import { ERR_OK } from "../../api/config"
 import { Loading } from 'element-ui';
 import scroll from '../../base/scroll/index.vue';
+import { playListMixin} from '../../common/js/mixin';
+
 export default {
+  mixins: [playListMixin],
   components: {Slider, scroll},
   data() {
     return {
@@ -45,6 +48,11 @@ export default {
           }
         })
       },2000)
+    },
+    handlePlaylist(playlist) {
+      const bottom = playlist.length  > 0 ? '60px' : 0;
+      this.$refs.recommend.style.bottom = bottom;
+      this.$refs.scroll.refresh();
     },
     _loadList() {
       // this.discLists = this.discLists.concat(this.discLists)

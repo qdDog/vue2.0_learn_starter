@@ -33,10 +33,8 @@ export default {
         return;
       }
       getSingerDetail(this.singer.id).then(res => {
-        console.log("getSingerDetail", res)
         if (res.data.code === ERR_OK) {
           this.songs = this._normalizedSong(res.data.data.list);
-          console.log(this.songs)
         }
       });
     },

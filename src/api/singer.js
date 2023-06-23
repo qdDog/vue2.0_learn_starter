@@ -1,6 +1,7 @@
 import { returnData } from "./recommend";
 import jsonp from "../common/js/jsonp";
 import Jay_Zhou from "./mock/Jay_Zhou";
+import wubai from "./mock/wubai";
 
 export const getSingerList = () => {
   const fakeData = [
@@ -92,3 +93,5 @@ export const getSingerList = () => {
 export const getSingerDetail = id => {
   return returnData(Jay_Zhou);
 };
+
+export const getLyricData = () => returnData(wubai);

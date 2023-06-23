@@ -3,12 +3,14 @@ import Scroll from '../../base/scroll/index.vue';
 import SongList from '../../base/songlist/songlist.vue';
 import {prefixStyle} from '../../common/js/dom';
 import {mapActions} from 'vuex';
+import{ playListMixin } from '../../common/js/mixin';
 
 const RESERVED_HEIGHT = 40
 const transform = prefixStyle('transform')
 const backdrop = prefixStyle('backdrop-filter')
 
 export default  {
+  mixins: [playListMixin],
   components: {
     Scroll,
     SongList
@@ -93,8 +95,17 @@ export default  {
         index
       })
     },
+    random() {
+      this.randomPlay({list: this.songs})
+    },
+    handlePlaylist(playlist) {
+      const bottom = playlist.length  > 0 ? '60px' : 0;
+      this.$refs.list.$el.style.bottom = bottom;
+      this.$refs.list.refresh();
+    },
     ...mapActions([
-      'selectPlay'
+      'selectPlay',
+      'randomPlay'
     ])
   }
 }
@@ -102,13 +113,18 @@ export default  {
 
 <template>
   <div class="music-list">
-    <div class="back">
+    <div class="back" @click="back">
       <i class="icon-back"></i>
     </div>
     <h1 class="title" v-html="title"></h1>
     <div class="bg-image" :style="bgStyle" ref="bgImage">
       <div class="play-wrapper">
-        <div ref="playBtn" v-show="songs.length > 0" class="play">
+        <div
+          ref="playBtn"
+          v-show="songs.length > 0"
+          class="play"
+          @click="random"
+        >
           <i class="icon-play"></i>
           <span class="text">随机播放全部</span>
         </div>
