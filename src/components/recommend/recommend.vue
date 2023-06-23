@@ -5,10 +5,13 @@ import { ERR_OK } from "../../api/config"
 import { Loading } from 'element-ui';
 import scroll from '../../base/scroll/index.vue';
 import { playListMixin} from '../../common/js/mixin';
+import loading from '../../base/loading/loading.vue';
+import {mapMutations} from 'vuex';
+import {SET_DISC} from '../../store/mutations-types'
 
 export default {
   mixins: [playListMixin],
-  components: {Slider, scroll},
+  components: {Slider, scroll, loading},
   data() {
     return {
       recommends: [],
@@ -54,6 +57,16 @@ export default {
       this.$refs.recommend.style.bottom = bottom;
       this.$refs.scroll.refresh();
     },
+    selectItem(item) {
+      console.log(item);
+      this.$router.push(({
+        path: `/recommend/${item.dissid}`
+      }));
+      this.setDisc(item)
+    },
+    ...mapMutations({
+      setDisc: SET_DISC
+    }),
     _loadList() {
       // this.discLists = this.discLists.concat(this.discLists)
     }
@@ -79,8 +92,9 @@ export default {
           <ul>
             <li
               v-for="item in discLists"
-              :key="item.key"
+              :key="item.qq"
               class="item infinite-list-item"
+              @click="selectItem(item)"
             >
               <div class="icon">
                 <img width="60" height="60" :src="item.imgurl" />
@@ -92,8 +106,12 @@ export default {
             </li>
           </ul>
         </div>
+        <div class="loading-container" v-show="!discLists.length">
+          <loading />
+        </div>
       </div>
     </scroll>
+    <router-view></router-view>
   </div>
 </template>
 

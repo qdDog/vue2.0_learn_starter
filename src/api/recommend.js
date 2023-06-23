@@ -1,3 +1,5 @@
+import Eson from './mock/Eson';
+
 export const getRecommend = () => {
   const fakeData = [
     {
@@ -53,13 +55,17 @@ export const getDiscList = () => {
       listennup: 116298,
       score: 0,
       version: 0,
-      key: Math.abs(Math.random() * 1000000)
     }
   ];
 
   for (let i = 0; i < 15; i++) {
+    fakeData[0].qq++;
     fakeData.push(fakeData[0]);
   }
 
   return returnData(fakeData);
 };
+
+export function getSongList() {
+  return returnData(Eson);
+}

@@ -28,3 +28,5 @@ export const currentSong = state => {
   return state.playList[state.currentIndex] || {};
 };
 /********* 播放器 end *********/
+
+export const disc = state => state.disc;
