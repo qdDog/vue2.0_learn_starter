@@ -76,7 +76,6 @@ export default  {
   created() {
     this.probeType = 3
     this.listenScroll = true
-    console.log(this);
   },
   mounted() {
     this.imageHeight = this.$refs.bgImage.clientHeight
@@ -142,7 +141,7 @@ export default  {
       ref="list"
     >
       <div class="song-list-wrapper">
-        <song-list @select="selectItem" :songs="songs"></song-list>
+        <song-list @select="selectItem" :rank="rank" :songs="songs"></song-list>
       </div>
     </scroll>
   </div>

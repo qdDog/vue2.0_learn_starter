@@ -30,3 +30,5 @@ export const currentSong = state => {
 /********* 播放器 end *********/
 
 export const disc = state => state.disc;
+
+export const topList = state => state.topList;

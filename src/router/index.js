@@ -7,7 +7,7 @@ import Singer from "../components/singer/singer.vue";
 import SingerDetail from "../components/singer-detail/index.vue";
 import Search from "../components/search/search.vue";
 import Disc from "../components/disc/disc.vue"
-
+import TopList from '../components/top-list/top-list.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -30,7 +30,10 @@ export default new Router({
     {
       path: "/rank",
       name: "Rank",
-      component: Rank
+      component: Rank,
+      children: [
+        {path: ':id', component: TopList}
+      ]
     },
     {
       path: "/singer",
