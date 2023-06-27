@@ -53,8 +53,8 @@ export default {
           </div>
           <ul class="songlist">
             <li class="song" v-for="(song, index) in item.songList">
-              <span>{{index + 1}}</span>
-              <span>{{song.songname}}-{{song.singername}}</span>
+              <span>{{ index + 1 }}</span>
+              <span>{{ song.songname }}-{{ song.singername }}</span>
             </li>
           </ul>
         </li>

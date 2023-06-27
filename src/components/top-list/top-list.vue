@@ -1,6 +1,11 @@
 <template>
   <transition name="slide">
-    <music-list :rank="true" :title="title" :bg-image="bgImage" :songs="musicList"></music-list>
+    <music-list
+      :rank="true"
+      :title="title"
+      :bg-image="bgImage"
+      :songs="musicList"
+    ></music-list>
   </transition>
 </template>
 <script type="text/ecmascript-6">
@@ -55,9 +60,8 @@ export default {
 }
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylLus">
-  .slide-enter-active, .slide-leave-active
-    transition: all 0.3s ease
-  .slide-enter, .slide-leave-to
-    transform: translate3d(100%,0,0)
+.slide-enter-active, .slide-leave-active
+  transition: all 0.3s ease
+.slide-enter, .slide-leave-to
+  transform: translate3d(100%,0,0)
 </style>
-

@@ -12,7 +12,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000002J4UUk29y8BY.jpg?max_age=2592000",
       Fsinger_name: "薛之谦",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "A",
@@ -21,7 +21,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M0000025NhlN2yWrP4.jpg?max_age=2592000",
       Fsinger_name: "周杰伦",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "B",
@@ -30,7 +30,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000001z2JmX09LLgL.jpg?max_age=2592000",
       Fsinger_name: "汪苏泷",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "C",
@@ -39,7 +39,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "陈奕迅",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "C",
@@ -48,7 +48,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "陈奕迅1",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "C",
@@ -57,7 +57,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "陈奕迅12",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "F",
@@ -66,7 +66,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "李宇春",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "F",
@@ -75,7 +75,7 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "李宇春2",
-      Fsinger_tag: "541.555"
+      Fsinger_tag: "541.555",
     },
     {
       Findex: "F",
@@ -84,13 +84,13 @@ export const getSingerList = () => {
       Fsinger_mid:
         "https://y.qq.com/music/photo_new/T001R500x500M000003Nz2So3XXYek.jpg?max_age=2592000",
       Fsinger_name: "李宇春3",
-      Fsinger_tag: "541.555"
-    }
+      Fsinger_tag: "541.555",
+    },
   ];
   return returnData(fakeData);
 };
 
-export const getSingerDetail = id => {
+export const getSingerDetail = (id) => {
   return returnData(Jay_Zhou);
 };
 

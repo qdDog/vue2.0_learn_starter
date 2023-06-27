@@ -19,7 +19,7 @@ export default class Song {
     }
 
     return new Promise((resolve, reject) => {
-      getLyricData().then(res => {
+      getLyricData().then((res) => {
         if (res.status === ERR_OK) {
           this.lyric = res.data;
           resolve(this.lyric);
@@ -42,6 +42,6 @@ export function createSong(musicData) {
     image: musicData.pic,
     url:
       musicData.url ||
-      `https://audio04.dmhmusic.com/71_53_T10063772536_128_4_1_0_sdk-cpm/cn/0513/M00/53/54/ChAKCGRlvZWAKsczAEbXssLcbIY790.mp3?xcode=b414a30c3f5438cac16312d8936e88b5ef7a66a`
+      `https://audio04.dmhmusic.com/71_53_T10063772536_128_4_1_0_sdk-cpm/cn/0513/M00/53/54/ChAKCGRlvZWAKsczAEbXssLcbIY790.mp3?xcode=b414a30c3f5438cac16312d8936e88b5ef7a66a`,
   });
 }

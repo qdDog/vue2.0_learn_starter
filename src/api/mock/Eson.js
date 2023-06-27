@@ -10,8 +10,7 @@ export default {
         id: "1449996",
         title: "床上的黑洞 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003YVypt2BqM2k.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003YVypt2BqM2k.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -21,7 +20,7 @@ export default {
         date: "2018-01-02",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 2,
@@ -29,8 +28,7 @@ export default {
         id: "1406854",
         title: "明天何其多 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003P1wTa0VkS2h.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003P1wTa0VkS2h.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -40,7 +38,7 @@ export default {
         date: "2017-12-02",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 3,
@@ -48,8 +46,7 @@ export default {
         id: "1398663",
         title: "之外 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000002po6cL3hqN9w.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000002po6cL3hqN9w.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -59,7 +56,7 @@ export default {
         date: "2017-12-01",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 4,
@@ -67,8 +64,7 @@ export default {
         id: "1389387",
         title: "白玫瑰+红玫瑰 (陈奕迅 C'mon in Tour 旧金山站 2017/10/11)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101000u8Dw22RV6bD.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101000u8Dw22RV6bD.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -78,7 +74,7 @@ export default {
         date: "2017-11-19",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 5,
@@ -86,8 +82,7 @@ export default {
         id: "1382135",
         title: "爱情呼叫转移 (混剪虐心版 陆垚知马俐) (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000HK3hp26lPwv.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000HK3hp26lPwv.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -97,7 +92,7 @@ export default {
         date: "2017-11-17",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 6,
@@ -105,8 +100,7 @@ export default {
         id: "1368420",
         title: "谁来剪月光 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003szbUF1Kbi1P.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003szbUF1Kbi1P.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -116,7 +110,7 @@ export default {
         date: "2017-09-25",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 7,
@@ -124,8 +118,7 @@ export default {
         id: "1365152",
         title: "放 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M0000005NLeZ3LzNiF.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M0000005NLeZ3LzNiF.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -135,7 +128,7 @@ export default {
         date: "2017-09-12",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 8,
@@ -143,8 +136,7 @@ export default {
         id: "1365140",
         title: "披风 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003KUVt02waXod.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003KUVt02waXod.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -154,7 +146,7 @@ export default {
         date: "2017-09-12",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 9,
@@ -162,8 +154,7 @@ export default {
         id: "1363097",
         title: "起点.终站 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000002J4Ito2vkk9W.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000002J4Ito2vkk9W.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -173,7 +164,7 @@ export default {
         date: "2017-09-04",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 10,
@@ -181,8 +172,7 @@ export default {
         id: "1359467",
         title: "因为爱情 (饭制沙画版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003sGbRF3tRVxv.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003sGbRF3tRVxv.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -192,7 +182,7 @@ export default {
         date: "2017-08-24",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 11,
@@ -200,8 +190,7 @@ export default {
         id: "1355499",
         title: "爱是怀疑 (Live)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M0000044h3xf2Uw7Ta.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M0000044h3xf2Uw7Ta.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -211,7 +200,7 @@ export default {
         date: "2017-08-15",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 12,
@@ -219,8 +208,7 @@ export default {
         id: "1376233",
         title: "海胆 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000002pvRXb48LQFv.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000002pvRXb48LQFv.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -230,7 +218,7 @@ export default {
         date: "2017-08-06",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 13,
@@ -238,8 +226,7 @@ export default {
         id: "1352553",
         title: "富士山下 (Live)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000VQFPz0tldSd.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000VQFPz0tldSd.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -249,7 +236,7 @@ export default {
         date: "2017-08-03",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 14,
@@ -257,8 +244,7 @@ export default {
         id: "1350391",
         title: "红白玫瑰 (双声道饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000001eTTZC4I2vdX.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000001eTTZC4I2vdX.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -268,7 +254,7 @@ export default {
         date: "2017-07-26",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 15,
@@ -276,8 +262,7 @@ export default {
         id: "1350223",
         title: "陈奕迅2017年上半年演唱合集 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M1010020dxpQ4OCovO.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M1010020dxpQ4OCovO.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -287,7 +272,7 @@ export default {
         date: "2017-07-25",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 16,
@@ -295,8 +280,7 @@ export default {
         id: "1350222",
         title: "陈奕迅粉丝网祝陈奕迅生日快乐 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000002yEZQQ2OuJ9T.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000002yEZQQ2OuJ9T.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -306,7 +290,7 @@ export default {
         date: "2017-07-25",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 17,
@@ -314,8 +298,7 @@ export default {
         id: "1331713",
         title: "放 (微电影)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101000XFcPU37HvXF.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101000XFcPU37HvXF.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -325,7 +308,7 @@ export default {
         date: "2017-06-23",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 18,
@@ -333,8 +316,7 @@ export default {
         id: "1318632",
         title: "陈奕迅歌曲串烧",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000ugguu0h6ozH.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000ugguu0h6ozH.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -344,7 +326,7 @@ export default {
         date: "2017-06-13",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 19,
@@ -352,8 +334,7 @@ export default {
         id: "1306616",
         title: "喜欢一个人",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M1010007xsHs3wH3zj.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M1010007xsHs3wH3zj.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -363,7 +344,7 @@ export default {
         date: "2017-05-30",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
+        singer_mid: "003Nz2So3XXYek",
       },
       {
         index: 20,
@@ -371,8 +352,7 @@ export default {
         id: "1228497",
         title: "无条件 (伴奏版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000pRKRZ2tf6AV.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000pRKRZ2tf6AV.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -382,9 +362,9 @@ export default {
         date: "2017-05-09",
         singer_id: 143,
         singer_name: "陈奕迅",
-        singer_mid: "003Nz2So3XXYek"
-      }
+        singer_mid: "003Nz2So3XXYek",
+      },
     ],
-    total: 22
-  }
+    total: 22,
+  },
 };

@@ -12,8 +12,7 @@ export default {
         id: "1455656",
         title: "突然的自我",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000aU8j50DsNGF.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000aU8j50DsNGF.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -25,7 +24,7 @@ export default {
         singer_name: "周杰伦",
         singer_mid: "0025NhlN2yWrP4",
         url: music1,
-        duration: 216
+        duration: 216,
       },
       {
         index: 2,
@@ -33,8 +32,7 @@ export default {
         id: "1452247",
         title: "周杰伦那些轻松欢快的歌曲 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000xofpj1VHmdK.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000xofpj1VHmdK.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -45,8 +43,7 @@ export default {
         singer_id: 4558,
         singer_name: "周杰伦",
         singer_mid: "0025NhlN2yWrP4",
-        url:
-          "https://audio04.dmhmusic.com/71_53_T10046229115_128_4_1_0_sdk-cpm/cn/0206/M00/6D/84/ChR47FsroA6AJyeSADNzx3hpCkA092.mp3?xcode=e4231f4b91ae9211c1631117fc9b6661961dbfd"
+        url: "https://audio04.dmhmusic.com/71_53_T10046229115_128_4_1_0_sdk-cpm/cn/0206/M00/6D/84/ChR47FsroA6AJyeSADNzx3hpCkA092.mp3?xcode=e4231f4b91ae9211c1631117fc9b6661961dbfd",
       },
       {
         index: 3,
@@ -54,8 +51,7 @@ export default {
         id: "1449411",
         title: "告白气球 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003SrqIb2NBQHi.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003SrqIb2NBQHi.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -66,8 +62,7 @@ export default {
         singer_id: 4558,
         singer_name: "周杰伦",
         singer_mid: "0025NhlN2yWrP4",
-        url:
-          "https://audio04.dmhmusic.com/71_53_T10046229116_128_4_1_0_sdk-cpm/cn/0206/M00/6D/84/ChR47FsroA6ASzn9AEseheCi42M471.mp3?xcode=59ad6ce9a7e9bac7c16319f68af557e0263c3a7"
+        url: "https://audio04.dmhmusic.com/71_53_T10046229116_128_4_1_0_sdk-cpm/cn/0206/M00/6D/84/ChR47FsroA6ASzn9AEseheCi42M471.mp3?xcode=59ad6ce9a7e9bac7c16319f68af557e0263c3a7",
       },
       {
         index: 4,
@@ -75,8 +70,7 @@ export default {
         id: "1504762",
         title: "告白气球 (央视2018春晚 2018/2/15)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000001czeEA3K431g.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000001czeEA3K431g.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -87,8 +81,7 @@ export default {
         singer_id: 4558,
         singer_name: "周杰伦",
         singer_mid: "0025NhlN2yWrP4",
-        url:
-          "https://audio04.dmhmusic.com/71_53_T10046205308_128_4_1_0_sdk-cpm/cn/0207/M00/65/F8/ChR47FsrfZiAA00gAD0Wrzoa5Bg119.mp3?xcode=80d85567f1f03698c163164ff8cd6cbb997d435"
+        url: "https://audio04.dmhmusic.com/71_53_T10046205308_128_4_1_0_sdk-cpm/cn/0207/M00/65/F8/ChR47FsrfZiAA00gAD0Wrzoa5Bg119.mp3?xcode=80d85567f1f03698c163164ff8cd6cbb997d435",
       },
       {
         index: 5,
@@ -96,8 +89,7 @@ export default {
         id: "1445642",
         title: "等你下课 (伴奏版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101001oczvI2ZEKWm.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101001oczvI2ZEKWm.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -107,7 +99,7 @@ export default {
         date: "2018-01-22",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 6,
@@ -115,8 +107,7 @@ export default {
         id: "1437991",
         title: "周杰伦的2000W个故事之《最长的电影》 (微电影)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003MeCE24Bi0VE.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003MeCE24Bi0VE.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -126,7 +117,7 @@ export default {
         date: "2017-12-13",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 7,
@@ -134,8 +125,7 @@ export default {
         id: "1379401",
         title: "菊花台 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000qi5NP3edgwJ.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000qi5NP3edgwJ.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -145,7 +135,7 @@ export default {
         date: "2017-11-06",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 8,
@@ -153,8 +143,7 @@ export default {
         id: "1378667",
         title: "龙战骑士 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M0000036kl8C1GZeZU.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M0000036kl8C1GZeZU.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -164,7 +153,7 @@ export default {
         date: "2017-11-01",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 9,
@@ -172,8 +161,7 @@ export default {
         id: "1373666",
         title: "一路向北 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003cRh3F3CxLPK.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003cRh3F3CxLPK.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -183,7 +171,7 @@ export default {
         date: "2017-10-09",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 10,
@@ -192,8 +180,7 @@ export default {
         title:
           "不该 + 解脱 + 黑色幽默 + 安静 + 如果你也听说 + 稻香 + 渴了 (2017周杰伦地表最强演唱会台北站)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101001SuwYs4Ie2B5.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101001SuwYs4Ie2B5.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -203,7 +190,7 @@ export default {
         date: "2017-10-01",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 11,
@@ -212,8 +199,7 @@ export default {
         title:
           "情非得已 + 缺口 + 安静 + 热情的沙漠 (2017周杰伦地表最强演唱会台北站)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101001QpsQE2PpT41.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101001QpsQE2PpT41.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -223,7 +209,7 @@ export default {
         date: "2017-09-30",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 12,
@@ -232,8 +218,7 @@ export default {
         title:
           "晴天 + 安静 + 修炼爱情 + 最长的电影 (2017周杰伦地表最强演唱会台北站)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M101000pKEcJ3nnjGl.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M101000pKEcJ3nnjGl.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -243,7 +228,7 @@ export default {
         date: "2017-09-29",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 13,
@@ -251,8 +236,7 @@ export default {
         id: "1375996",
         title: "阿飞的小蝴蝶 + 告白气球 (2017周杰伦地表最强演唱会台北站)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M0000043x7qf0uPDm7.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M0000043x7qf0uPDm7.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -262,7 +246,7 @@ export default {
         date: "2017-09-28",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 14,
@@ -270,8 +254,7 @@ export default {
         id: "1366594",
         title: "可爱女人 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003n9tWs4aXIH3.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003n9tWs4aXIH3.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -281,7 +264,7 @@ export default {
         date: "2017-09-18",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 15,
@@ -289,8 +272,7 @@ export default {
         id: "1363062",
         title: "龙拳 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M0000034zEZv4XYsJV.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M0000034zEZv4XYsJV.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -300,7 +282,7 @@ export default {
         date: "2017-09-04",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 16,
@@ -308,8 +290,7 @@ export default {
         id: "1363051",
         title: "兰亭序 (KTV版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003ZiRpH1XZ8Bo.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003ZiRpH1XZ8Bo.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -319,7 +300,7 @@ export default {
         date: "2017-09-04",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 17,
@@ -327,8 +308,7 @@ export default {
         id: "1339885",
         title: "床边故事 (120秒版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003PSncX3ov0jw.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003PSncX3ov0jw.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -338,7 +318,7 @@ export default {
         date: "2017-07-10",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 18,
@@ -346,8 +326,7 @@ export default {
         id: "1339260",
         title: "牛仔很忙",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000000P0vov4XlcO0.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000000P0vov4XlcO0.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -357,7 +336,7 @@ export default {
         date: "2017-07-06",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 19,
@@ -365,8 +344,7 @@ export default {
         id: "1339212",
         title: "蜗牛 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000002m07Py2F3Tyh.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000002m07Py2F3Tyh.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -376,7 +354,7 @@ export default {
         date: "2017-07-06",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
+        singer_mid: "0025NhlN2yWrP4",
       },
       {
         index: 20,
@@ -384,8 +362,7 @@ export default {
         id: "1331754",
         title: "时光机 (饭制版)",
         desc: "",
-        pic:
-          "http://y.gtimg.cn/music/photo_new/T015R640x360M000003G40eL1ArcNH.jpg",
+        pic: "http://y.gtimg.cn/music/photo_new/T015R640x360M000003G40eL1ArcNH.jpg",
         encrypt_uin: "on**",
         upload_uin: "0",
         upload_nick: "",
@@ -395,9 +372,9 @@ export default {
         date: "2017-06-23",
         singer_id: 4558,
         singer_name: "周杰伦",
-        singer_mid: "0025NhlN2yWrP4"
-      }
+        singer_mid: "0025NhlN2yWrP4",
+      },
     ],
-    total: 33
-  }
+    total: 33,
+  },
 };

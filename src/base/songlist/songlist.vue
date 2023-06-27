@@ -50,7 +50,7 @@ export default {
         class="item"
       >
         <div class="rank" v-show="rank">
-          <span :class="getRankCls(index)">{{getRankText(index)}}</span>
+          <span :class="getRankCls(index)">{{ getRankText(index) }}</span>
         </div>
         <div class="content">
           <h2 class="name">{{ song.title }}</h2>

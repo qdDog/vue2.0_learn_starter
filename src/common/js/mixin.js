@@ -1,9 +1,9 @@
-import { mapGetters } from 'vuex';
-import {playList} from '../../store/getters';
+import { mapGetters } from "vuex";
+import { playList } from "../../store/getters";
 
 export const playListMixin = {
   computed: {
-    ...mapGetters(['playList'])
+    ...mapGetters(["playList"]),
   },
   mounted() {
     this.handlePlaylist(this.playList);
@@ -14,11 +14,11 @@ export const playListMixin = {
   watch: {
     playList(newVal) {
       this.handlePlaylist(newVal);
-    }
+    },
   },
   methods: {
     handlePlaylist() {
-      throw new Error('component must implement handlePlaylist method');
-    }
-  }
+      throw new Error("component must implement handlePlaylist method");
+    },
+  },
 };

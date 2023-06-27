@@ -26,7 +26,7 @@ let vendor = (() => {
     Moz: "MozTransform",
     O: "OTransform",
     ms: "msTransform",
-    standard: "transform"
+    standard: "transform",
   };
 
   for (let key in transformNames) {
