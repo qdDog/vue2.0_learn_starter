@@ -35,9 +35,9 @@ export function createSong(musicData) {
   return new Song({
     id: musicData.id,
     mid: musicData.vid,
-    album: musicData.title,
+    album: musicData.title || musicData.albumname,
     singer_name: filterSinger(musicData.singer),
-    title: musicData.title,
+    title: musicData.title || musicData.songname,
     duration: musicData.duration || 180,
     image: musicData.pic,
     url:
@@ -47,6 +47,7 @@ export function createSong(musicData) {
 }
 
 export function filterSinger(singer) {
+  console.log(singer);
   let ret = [];
   if (!singer) {
     return '';

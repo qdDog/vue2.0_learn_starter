@@ -1,5 +1,5 @@
-import * as types from "./mutations-types";
-import { SET_TOP_LIST } from "./mutations-types";
+import * as types from './mutations-types';
+import {SET_TOP_LIST} from './mutations-types';
 
 const mutations = {
   [types.SET_SINGER](state, payload) {
@@ -29,6 +29,9 @@ const mutations = {
   [types.SET_TOP_LIST](state, toplist) {
     state.topList = toplist;
   },
+  [types.SET_SEARCH_HISTORY](state, searchHistory) {
+    state.searchHistory = searchHistory;
+  }
 };
 
 export default mutations;

@@ -1,5 +1,5 @@
-import state from "./state";
-import { playMode } from "../common/js/config";
+import state from './state';
+import {playMode} from '../common/js/config';
 
 // 歌手
 export const singer = (state, getters) => state.singer;
@@ -32,3 +32,5 @@ export const currentSong = (state) => {
 export const disc = (state) => state.disc;
 
 export const topList = (state) => state.topList;
+
+export const searchHistory = (state) => state.searchHistory;

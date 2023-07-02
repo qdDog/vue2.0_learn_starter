@@ -1,12 +1,17 @@
 <script type="text/ecmascript-6">
 import {search} from '../../api/search';
-import {filterSinger} from '../../common/js/song';
+import {createSong, filterSinger} from '../../common/js/song';
 import Scroll from '../../base/scroll/index.vue';
 import Loading from '../../base/loading/loading.vue';
+import Singer from '../../common/js/singer';
+import {mapMutations, mapActions} from 'vuex';
+import {SET_SINGER} from '../../store/mutations-types';
+import NoResult from '../../base/no-result/no-result.vue';
+import {before} from 'better-scroll/src/util';
 
 const TYPE_SINGER = 'singer';
 export default {
-  components: {Scroll, Loading},
+  components: {Scroll, Loading, NoResult},
   props: {
     query: {
       type: String,
@@ -23,6 +28,10 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({
+      setSinger: SET_SINGER
+    }),
+    ...mapActions(['insertSong']),
     _search() {
       this.hasMore = true;
       search(this.query, this.page, this.showSinger).then(res => {
@@ -44,8 +53,15 @@ export default {
       }
 
       if (data.song) {
-        ret = ret.concat(data.song.list);
+        ret = ret.concat(this._normalizeSongs(data.song.list));
       }
+      return ret;
+    },
+    _normalizeSongs(list) {
+      let ret = [];
+      list.forEach((musicData) => {
+        ret.push(createSong(musicData));
+      });
       return ret;
     },
 
@@ -59,9 +75,9 @@ export default {
     getDisplayName(item) {
       console.log('getDisplayName', item);
       if (item && item.type === TYPE_SINGER) {
-        return item.singername;
+        return item.singer_name;
       } else if (item) {
-        return `${item.songname}-${filterSinger(item.singer)}`;
+        return `${item.title}-${item.singer_name}`;
       }
     },
     searchMore() {
@@ -74,22 +90,52 @@ export default {
         this._checkMore(res.data.data);
       });
     },
+    selectItem(item) {
+      if (item.type === TYPE_SINGER) {
+        const singer = new Singer({
+          id: item.singermid,
+          name: item.singername
+        });
+        this.$router.push({
+          path: `/search/${singer.id}`
+        });
+        this.setSinger(singer);
+      } else {
+        this.insertSong(item);
+      }
+      this.$emit('select');
+    },
+    listScroll() {
+      this.$emit('listScroll');
+    },
+    refresh() {
+      this.$refs.suggest.refresh();
+    }
   },
   data() {
     return {
       page: 1,
       result: [],
       pullup: true,
-      hasMore: true
+      hasMore: true,
+      beforeScroll: true
     };
   }
 };
 </script>
 
 <template>
-  <scroll class="suggest" :data="result" :pullup="pullup" @scrollToEnd="searchMore">
+  <scroll
+    ref="suggest"
+    class="suggest"
+    :data="result"
+    :pullup="pullup"
+    @beforeScroll="listScroll"
+    @scrollToEnd="searchMore"
+    :beforeScroll="beforeScroll"
+  >
     <ul class="suggest-list">
-      <li class="suggest-item" v-for="item in result">
+      <li @click="selectItem(item)" class="suggest-item" v-for="item in result">
         <div class="icon">
           <i :class="getIconCls(item)"></i>
         </div>
@@ -99,6 +145,9 @@ export default {
       </li>
       <loading v-show="hasMore" title=""></loading>
     </ul>
+    <div class="no-result-wrapper" v-show="!hasMore && !result.length">
+      <no-result title="抱歉，暂无搜索结果"></no-result>
+    </div>
   </scroll>
 </template>
 
