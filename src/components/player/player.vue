@@ -7,7 +7,7 @@ import {
   SET_PLAY_MODE,
   SET_SEQUENCE_LIST
 } from '../../store/mutations-types';
-import animations from 'create-keyframe-animation'
+import animations from 'create-keyframe-animation';
 import {prefixStyle} from '../../common/js/dom';
 import progressBar from '../../base/progress-bar/progress-bar.vue';
 import progressCircle from '../../base/progress-circle/progress-circle.vue';
@@ -15,53 +15,50 @@ import {playMode} from '../../common/js/config';
 import {shuffle} from '../../common/js/util';
 import Lyric from 'lyric-parser';
 import scroll from '../../base/scroll/index.vue';
+import Playlist from '../playlist/playlist.vue';
+import {playerMiXin} from '../../common/js/mixin';
 
-const transform = prefixStyle('transform')
-const transitionDuration = prefixStyle('transitionDuration')
+const transform = prefixStyle('transform');
+const transitionDuration = prefixStyle('transitionDuration');
 export default {
   components: {
     progressBar,
     progressCircle,
-    scroll
+    scroll,
+    Playlist
   },
+  mixins: [playerMiXin],
   data() {
     return {
       songReady: false,
-			currentTime: 0,
+      currentTime: 0,
       radius: 32,
       currentLyric: null,
       currentLyricNum: 0,
       currentShow: 'cd',
       playingLyric: ''
-    }
+    };
   },
   computed: {
     playIcon() {
-      return this.playing ? 'icon-pause' : 'icon-play'
+      return this.playing ? 'icon-pause' : 'icon-play';
     },
     miniIcon() {
-      return this.playing ? 'icon-pause-mini' : 'icon-play-mini'
-    },
-    iconMode() {
-      return this.mode === playMode.sequence ? "icon-sequence" : this.mode === playMode.loop ? "icon-loop" : "icon-random"
+      return this.playing ? 'icon-pause-mini' : 'icon-play-mini';
     },
     cdRotate() {
-      return this.playing ? 'play' : 'play pause'
+      return this.playing ? 'play' : 'play pause';
     },
     disabledCls() {
-      return this.songReady ? '' : 'disable'
+      return this.songReady ? '' : 'disable';
     },
     percent() {
-      return this.currentTime / this.currentSong.duration
+      return this.currentTime / this.currentSong.duration;
     },
     ...mapGetters([
-      "fullScreen",
-      "playList",
-      "currentSong",
-      "playing",
-      "currentIndex",
-      "mode",
-      "sequenceList"
+      'fullScreen',
+      'playing',
+      'currentIndex',
     ])
   },
   created() {
@@ -75,7 +72,7 @@ export default {
       this.setFullScreen(true);
     },
     enter(ele, done) {
-      const { x, y, scale } = this._getPosAndScale()
+      const {x, y, scale} = this._getPosAndScale();
       const animation = {
         0: {
           transform: `translate3d(${x}px, ${y}px, 0) scale(${scale})`
@@ -97,92 +94,92 @@ export default {
         }
       });
 
-      animations.runAnimation(this.$refs.cdWrapper, 'move', done)
+      animations.runAnimation(this.$refs.cdWrapper, 'move', done);
     },
     afterEnter() {
-      animations.unregisterAnimation('move')
-      this.$refs.cdWrapper.style.animation = ''
+      animations.unregisterAnimation('move');
+      this.$refs.cdWrapper.style.animation = '';
     },
     leave(ele, done) {
-      this.$refs.cdWrapper.style.transition = 'all 0.4s'
-      const { x, y, scale } = this._getPosAndScale()
-      this.$refs.cdWrapper.style[transform] = `translate3d(${x}px, ${y}px, 0) scale(${scale})`
-      this.$refs.cdWrapper.addEventListener('transitionend', done)
+      this.$refs.cdWrapper.style.transition = 'all 0.4s';
+      const {x, y, scale} = this._getPosAndScale();
+      this.$refs.cdWrapper.style[transform] = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+      this.$refs.cdWrapper.addEventListener('transitionend', done);
     },
     afterLeave() {
-      this.$refs.cdWrapper.style.transition = ''
-      this.$refs.cdWrapper.style.transform = ''
+      this.$refs.cdWrapper.style.transition = '';
+      this.$refs.cdWrapper.style.transform = '';
     },
     _getPosAndScale() {
       // mini播放器的cd图片中心点
-      const targetWidth = 40
-      const paddingLeft = 40
-      const paddingBottom = 30
+      const targetWidth = 40;
+      const paddingLeft = 40;
+      const paddingBottom = 30;
 
       // normal播放器的CD图片中心点
-      const paddingTop = 80
-      const width = window.innerWidth * 0.8
-      const scale = targetWidth / width
-      const x = -(window.innerWidth / 2 - paddingLeft)
-      const y = window.innerHeight - paddingTop - width / 2 - paddingBottom
+      const paddingTop = 80;
+      const width = window.innerWidth * 0.8;
+      const scale = targetWidth / width;
+      const x = -(window.innerWidth / 2 - paddingLeft);
+      const y = window.innerHeight - paddingTop - width / 2 - paddingBottom;
       return {x, y, scale};
     },
     togglePlaying() {
       if (!this.songReady) {
-        return
+        return;
       }
-      this.setPlaying(!this.playing)
+      this.setPlaying(!this.playing);
 
       if (this.currentLyric) {
-        this.currentLyric.togglePlay()
+        this.currentLyric.togglePlay();
       }
     },
     next() {
       if (!this.songReady) {
-        return
+        return;
       }
 
       if (this.playList.length === 1) {
-        this.loop()
+        this.loop();
       } else {
-        let index = this.currentIndex + 1
+        let index = this.currentIndex + 1;
         if (index === this.playList.length) {
-          index = 0
+          index = 0;
         }
 
-        this.setCurrentSongIndex(index)
+        this.setCurrentSongIndex(index);
         if (!this.playing) {
-          this.togglePlaying()
+          this.togglePlaying();
         }
       }
 
-      this.songReady = false
+      this.songReady = false;
     },
     prev() {
       if (!this.songReady) {
-        return
+        return;
       }
 
       if (this.playList.length === 1) {
-        this.loop()
+        this.loop();
       } else {
-        let index = this.currentIndex - 1
+        let index = this.currentIndex - 1;
         if (index === -1) {
-          index = this.playList.length - 1
+          index = this.playList.length - 1;
         }
 
-        this.setCurrentSongIndex(index)
+        this.setCurrentSongIndex(index);
         if (!this.playing) {
-          this.togglePlaying()
+          this.togglePlaying();
         }
       }
-      this.songReady = false
+      this.songReady = false;
     },
     ready() {
-      this.songReady = true
+      this.songReady = true;
     },
     error() {
-      this.songReady = true
+      this.songReady = true;
     },
     end() {
       if (this.mode === playMode.loop) {
@@ -199,84 +196,70 @@ export default {
         this.currentLyric.seek(0);
       }
     },
-		updateTime(e) {
-			this.currentTime = e.target.currentTime;
-		},
-		format(interval) {
-			interval = interval | 0;
-			const minutes = interval / 60 | 0;
-			const second = this._pad(interval) % 60;
-			return `${minutes}:${second}`;
-		},
+    updateTime(e) {
+      this.currentTime = e.target.currentTime;
+    },
+    format(interval) {
+      interval = interval | 0;
+      const minutes = interval / 60 | 0;
+      const second = this._pad(interval) % 60;
+      return `${minutes}:${second}`;
+    },
     getLyric() {
       this.currentSong.getLyric().then(res => {
         this.currentLyric = new Lyric(res.lyric, this.handleLyric);
         console.log(this.currentLyric);
         if (this.playing) {
-          this.currentLyric.play()
+          this.currentLyric.play();
         }
       }).catch(() => {
-        this.currentLyric = null
-        this.playingLyric = ''
-        this.currentLyricNum = 0
-      })
+        this.currentLyric = null;
+        this.playingLyric = '';
+        this.currentLyricNum = 0;
+      });
     },
     handleLyric({lineNum, txt}) {
-      this.currentLyricNum = lineNum
+      this.currentLyricNum = lineNum;
 
       console.log(lineNum, txt);
       if (lineNum > 5) {
-        let lineEle = this.$refs.lyricLine[lineNum - 5]
-        this.$refs.lyricList.scrollToElement(lineEle, 1000)
+        let lineEle = this.$refs.lyricLine[lineNum - 5];
+        this.$refs.lyricList.scrollToElement(lineEle, 1000);
       } else {
-        this.$refs.lyricList.scrollTo(0, 0, 1000)
+        this.$refs.lyricList.scrollTo(0, 0, 1000);
       }
-      this.playingLyric =txt;
+      this.playingLyric = txt;
     },
     _pad(num, n = 2) {
       let len = num.toString().length;
       while (len < n) {
-        num = "0" + num
-        len++
+        num = '0' + num;
+        len++;
       }
-      return num
+      return num;
     },
     opProgressBarChange(percent) {
-      const currentTimes = this.currentSong.duration  * percent;
+      const currentTimes = this.currentSong.duration * percent;
       this.$refs.audio.currentTime = currentTimes;
       if (!this.playing) {
-        this.togglePlaying()
+        this.togglePlaying();
       }
 
       if (this.currentLyric) {
-        this.currentLyric.seek(currentTimes * 1000)
+        this.currentLyric.seek(currentTimes * 1000);
       }
-    },
-    changeMode() {
-      const mode = (this.mode + 1) % 3
-      this.setPlayMode(mode)
-      let list = null
-      if (mode === playMode.random) {
-        list = shuffle(this.sequenceList)
-      } else {
-        list = this.sequenceList
-      }
-      this.resetCurrentIndex(list)
-      this.setPlayList(list)
-    },
-    resetCurrentIndex(list) {
-      let index = list.findIndex((item) => item.id === this.currentSong.id)
-      this.setCurrentSongIndex(index)
     },
     middleTouchStart(e) {
       this.touch.initiated = true;
-      const touches = e.touches[0]
+      const touches = e.touches[0];
       this.touch.startX = touches.pageX;
       this.touch.startY = touches.startY;
     },
     middleTouchMove(e) {
-      if (!this.touch.initiated) {return;}
-      const touches = e.touches[0]
+      if (!this.touch.initiated) {
+        return;
+      }
+      const touches = e.touches[0];
       const deltaX = touches.pageX - this.touch.startX;
       const deltaY = touches.pageY - this.touch.startY;
 
@@ -285,69 +268,71 @@ export default {
       }
 
       const left = this.currentShow === 'cd' ? 0 : -window.innerWidth;
-      const offsetWidth = Math.min(0,Math.max(-window.innerWidth, left + deltaX));
+      const offsetWidth = Math.min(0, Math.max(-window.innerWidth, left + deltaX));
       this.touch.percent = Math.abs(offsetWidth / window.innerWidth);
       this.$refs.lyricList.$el.style[transform] = `translate3d(${offsetWidth}px, 0,0)`;
       console.log(this.$refs.lyricList.$el);
-      this.$refs.lyricList.$el.style[transitionDuration] = 0
+      this.$refs.lyricList.$el.style[transitionDuration] = 0;
       this.$refs.middleL.style.opacity = 1 - this.touch.percent;
-      this.$refs.middleL.style[transitionDuration] = 0
+      this.$refs.middleL.style[transitionDuration] = 0;
     },
     middleTouchEnd(e) {
-      let offsetWidth
-      let opacity
+      let offsetWidth;
+      let opacity;
       if (this.currentShow === 'cd') {
         if (this.touch.percent > 0.1) {
           offsetWidth = -window.innerWidth;
-          opacity = 0
-          this.currentShow = 'lyric'
+          opacity = 0;
+          this.currentShow = 'lyric';
         } else {
-          offsetWidth = 0
-          opacity = 1
+          offsetWidth = 0;
+          opacity = 1;
         }
       } else {
         if (this.touch.percent < 0.9) {
-          offsetWidth = 0
-          this.currentShow = 'cd'
-          opacity = 1
+          offsetWidth = 0;
+          this.currentShow = 'cd';
+          opacity = 1;
         } else {
-          opacity = 0
-          offsetWidth = -window.innerWidth
+          opacity = 0;
+          offsetWidth = -window.innerWidth;
         }
       }
-      const time = 300
+      const time = 300;
       this.$refs.lyricList.$el.style[transform] = `translate3d(${offsetWidth}px, 0,0)`;
-      this.$refs.lyricList.$el.style[transitionDuration] = `${time}ms`
+      this.$refs.lyricList.$el.style[transitionDuration] = `${time}ms`;
       this.$refs.middleL.style.opacity = opacity;
-      this.$refs.middleL.style[transitionDuration] = `${time}ms`
+      this.$refs.middleL.style[transitionDuration] = `${time}ms`;
     },
     ...mapMutations({
       setFullScreen: SET_FULL_SCREEN,
       setPlaying: SET_PLAYING_STATE,
-      setCurrentSongIndex: SET_CURRENT_INDEX,
-      setPlayMode: SET_PLAY_MODE,
-      setPlayList: SET_SEQUENCE_LIST
-    })
+    }),
+    showPlayList() {
+      this.$refs.playlist.show();
+    }
   },
   watch: {
     currentSong(newSong, oldSong) {
-      if (newSong.id === oldSong.id) {return}
+      if (newSong.id === oldSong.id) {
+        return;
+      }
       if (this.currentLyric) {
         this.currentLyric.stop();
       }
       setTimeout(() => {
-        this.$refs.audio.play()
-        this.getLyric()
-      }, 1000)
+        this.$refs.audio.play();
+        this.getLyric();
+      }, 1000);
     },
     playing(newPlaying) {
-      const audio = this.$refs.audio
+      const audio = this.$refs.audio;
       this.$nextTick(() => {
-        newPlaying ? audio.play() : audio.pause()
-      })
-    },
+        newPlaying ? audio.play() : audio.pause();
+      });
+    }
   },
-}
+};
 </script>
 
 <template>
@@ -361,7 +346,7 @@ export default {
     >
       <div class="normal-player" v-show="fullScreen">
         <div class="background">
-          <img width="100%" height="100%" :src="currentSong.image" alt="" />
+          <img width="100%" height="100%" :src="currentSong.image" alt=""/>
         </div>
         <div class="top">
           <div class="back" @click="back">
@@ -380,7 +365,7 @@ export default {
           <div class="middle-l" ref="middleL">
             <div class="cd-wrapper" ref="cdWrapper">
               <div class="cd" :class="cdRotate">
-                <img class="image" :src="currentSong.image" alt="" />
+                <img class="image" :src="currentSong.image" alt=""/>
               </div>
             </div>
             <div class="playing-lyric-wrapper">
@@ -468,11 +453,12 @@ export default {
             ></i>
           </progress-circle>
         </div>
-        <div class="control">
+        <div class="control" @click="showPlayList">
           <i class="icon-playlist"></i>
         </div>
       </div>
     </transition>
+    <playlist ref="playlist"></playlist>
     <audio
       @canplay="ready"
       @error="error"
@@ -497,6 +483,7 @@ export default {
     bottom: 0
     z-index: 150
     background: $color-background
+
     .background
       position: absolute
       left: 0
@@ -506,20 +493,24 @@ export default {
       z-index: -1
       opacity: 0.6
       filter: blur(20px)
+
     .top
       position: relative
       margin-bottom: 25px
+
       .back
         position absolute
         top: 0
         left: 6px
         z-index: 50
+
         .icon-back
           display: block
           padding: 9px
           font-size: $font-size-large-x
           color: $color-theme
           transform: rotate(-90deg)
+
       .title
         width: 70%
         margin: 0 auto
@@ -528,11 +519,13 @@ export default {
         no-wrap()
         font-size: $font-size-large
         color: $color-text
+
       .subtitle
         line-height: 20px
         text-align: center
         font-size: $font-size-medium
         color: $color-text
+
     .middle
       position: fixed
       width: 100%
@@ -540,6 +533,7 @@ export default {
       bottom: 170px
       white-space: nowrap
       font-size: 0
+
       .middle-l
         display: inline-block
         vertical-align: top
@@ -547,22 +541,27 @@ export default {
         width: 100%
         height: 0
         padding-top: 80%
+
         .cd-wrapper
           position: absolute
           left: 10%
           top: 0
           width: 80%
           height: 100%
+
           .cd
             width: 100%
             height: 100%
             box-sizing: border-box
             border: 10px solid rgba(255, 255, 255, 0.1)
             border-radius: 50%
+
             &.play
               animation: rotate 20s linear infinite
+
             &.pause
               animation-play-state: paused
+
             .image
               position: absolute
               left: 0
@@ -576,35 +575,43 @@ export default {
           margin: 30px auto 0 auto
           overflow: hidden
           text-align: center
+
           .playing-lyric
             height: 20px
             line-height: 20px
             font-size: $font-size-medium
             color: $color-text-l
+
       .middle-r
         display: inline-block
         vertical-align: top
         width: 100%
         height: 100%
         overflow: hidden
+
         .lyric-wrapper
           width: 80%
           margin: 0 auto
           overflow: hidden
           text-align: center
+
           .text
             line-height: 32px
             color: $color-text-l
             font-size: $font-size-medium
+
             &.current
               color: $color-text
+
     .bottom
       position: absolute
       bottom: 50px
       width: 100%
+
       .dot-wrapper
         text-align: center
         font-size: 0
+
         .dot
           display: inline-block
           vertical-align: middle
@@ -613,59 +620,80 @@ export default {
           height: 8px
           border-radius: 50%
           background: $color-text-l
+
           &.active
             width: 20px
             border-radius: 5px
             background: $color-text-ll
+
       .progress-wrapper
         display: flex
         align-items: center
         width: 80%
         margin: 0 auto
         padding: 10px 0
+
         .time
           color: $color-text
           font-size: $font-size-small
           flex: 0 0 30px
           line-height: 30px
           width: 30px
+
           &.time-l
             text-align: left
+
           &.time-r
             text-align: right
+
         .progress-bar-wrapper
           flex: 1
+
       .operators
         display: flex
         align-items: center
+
         .icon
           flex: 1
           color: $color-theme
+
           &.disable
             color: $color-theme-d
+
           i
             font-size: 30px
+
         .i-left
           text-align: right
+
         .i-center
           padding: 0 20px
           text-align: center
+
           i
             font-size: 40px
+
         .i-right
           text-align: left
+
         .icon-favorite
           color: $color-sub-theme
+
     &.normal-enter-active, &.normal-leave-active
       transition: all 0.4s
+
       .top, .bottom
         transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32)
+
     &.normal-enter, &.normal-leave-to
       opacity: 0
+
       .top
         transform: translate3d(0, -100px, 0)
+
       .bottom
         transform: translate3d(0, 100px, 0)
+
   .mini-player
     display: flex
     align-items: center
@@ -676,20 +704,27 @@ export default {
     width: 100%
     height: 60px
     background: $color-highlight-background
+
     &.mini-enter-active, &.mini-leave-active
       transition: all 0.4s
+
     &.mini-enter, &.mini-leave-to
       opacity: 0
+
     .icon
       flex: 0 0 40px
       width: 40px
       padding: 0 10px 0 20px
+
       img
         border-radius: 50%
+
         &.play
           animation: rotate 10s linear infinite
+
         &.pause
           animation-play-state: paused
+
     .text
       display: flex
       flex-direction: column
@@ -697,22 +732,27 @@ export default {
       flex: 1
       line-height: 20px
       overflow: hidden
+
       .name
         margin-bottom: 2px
         no-wrap()
         font-size: $font-size-medium
         color: $color-text
+
       .desc
         no-wrap()
         font-size: $font-size-small
         color: $color-text-d
+
     .control
       flex: 0 0 30px
       width: 30px
       padding: 0 10px
+
       .icon-play-mini, .icon-pause-mini, .icon-playlist
         font-size: 30px
         color: $color-theme-d
+
       .icon-mini
         font-size: 32px
         position: absolute
