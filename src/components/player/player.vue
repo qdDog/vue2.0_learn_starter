@@ -1,18 +1,14 @@
 <script type="text/ecmascript-6">
-import {mapGetters, mapMutations} from 'vuex';
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 import {
   SET_FULL_SCREEN,
   SET_PLAYING_STATE,
-  SET_CURRENT_INDEX,
-  SET_PLAY_MODE,
-  SET_SEQUENCE_LIST
 } from '../../store/mutations-types';
 import animations from 'create-keyframe-animation';
 import {prefixStyle} from '../../common/js/dom';
 import progressBar from '../../base/progress-bar/progress-bar.vue';
 import progressCircle from '../../base/progress-circle/progress-circle.vue';
 import {playMode} from '../../common/js/config';
-import {shuffle} from '../../common/js/util';
 import Lyric from 'lyric-parser';
 import scroll from '../../base/scroll/index.vue';
 import Playlist from '../playlist/playlist.vue';
@@ -177,6 +173,7 @@ export default {
     },
     ready() {
       this.songReady = true;
+      this.savePlayHistory(this.currentSong);
     },
     error() {
       this.songReady = true;
@@ -308,6 +305,7 @@ export default {
       setFullScreen: SET_FULL_SCREEN,
       setPlaying: SET_PLAYING_STATE,
     }),
+    ...mapActions(['savePlayHistory']),
     showPlayList() {
       this.$refs.playlist.show();
     }
