@@ -204,6 +204,10 @@ export default {
     },
     getLyric() {
       this.currentSong.getLyric().then(res => {
+        if (this.currentSong.lyric !== res.lyric) {
+          return;
+        }
+
         this.currentLyric = new Lyric(res.lyric, this.handleLyric);
         console.log(this.currentLyric);
         if (this.playing) {
@@ -312,13 +316,23 @@ export default {
   },
   watch: {
     currentSong(newSong, oldSong) {
-      if (newSong.id === oldSong.id) {
+      if (newSong.id === oldSong.id || !newSong.id) {
         return;
       }
       if (this.currentLyric) {
         this.currentLyric.stop();
       }
-      setTimeout(() => {
+
+      if (this.currentLyric) {
+        this.currentLyric.stop();
+        this.currentTime = 0;
+        this.playingLyric = '';
+        this.currentLineNum = 0;
+      }
+
+      clearTimeout(this.timer);
+
+      this.timer = setTimeout(() => {
         this.$refs.audio.play();
         this.getLyric();
       }, 1000);
@@ -421,7 +435,7 @@ export default {
               <i @click="next" class="icon-next"></i>
             </div>
             <div class="icon i-right">
-              <i class="icon icon-not-favorite"></i>
+              <i class="icon" :class="getFavoriteIcon(currentSong)" @click="toggleFavorite(currentSong)"></i>
             </div>
           </div>
         </div>

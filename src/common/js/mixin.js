@@ -36,7 +36,7 @@ export const playerMiXin = {
     iconMode() {
       return this.mode === playMode.sequence ? 'icon-sequence' : this.mode === playMode.loop ? 'icon-loop' : 'icon-random';
     },
-    ...mapGetters(['sequenceList', 'currentSong', 'playList', 'mode'])
+    ...mapGetters(['sequenceList', 'currentSong', 'playList', 'mode', 'favoriteList']),
   },
   methods: {
     ...mapMutations({
@@ -44,6 +44,7 @@ export const playerMiXin = {
       setPlayMode: SET_PLAY_MODE,
       setPlayList: SET_SEQUENCE_LIST
     }),
+    ...mapActions(['saveFavoriteList', 'deleteFavoriteList']),
     changeMode() {
       const mode = (this.mode + 1) % 3;
       this.setPlayMode(mode);
@@ -60,6 +61,24 @@ export const playerMiXin = {
       let index = list.findIndex((item) => item.id === this.currentSong.id);
       this.setCurrentSongIndex(index);
     },
+    getFavoriteIcon(song) {
+      if (this.isFavorite(song)) {
+        return 'icon-favorite';
+      }
+      return 'icon-not-favorite';
+    },
+    toggleFavorite(song) {
+      console.log('toggleFavorite', song);
+      if (this.isFavorite(song)) {
+        this.deleteFavoriteList(song);
+      } else {
+        this.saveFavoriteList(song);
+      }
+    },
+    isFavorite(song) {
+      const idx = this.favoriteList.findIndex((item) => item.id === song.id);
+      return idx > -1;
+    }
   }
 };
 
@@ -74,6 +93,7 @@ export const searchMiXin = {
     ...mapGetters(['searchHistory']),
   },
   methods: {
+
     ...mapActions(['saveSearchHistory', 'deleteSearchHistory']),
     blurInput() {
       this.$refs.searchBox.blur();
